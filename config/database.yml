@@ -80,6 +80,4 @@ test:
 #
 production:
   <<: *default
-  database: jantar_para_dois_production
-  username: jantar_para_dois
-  password: <%= ENV['JANTAR_PARA_DOIS_DATABASE_PASSWORD'] %>
+  url: <%= ENV['DATABASE_URL'] %>
