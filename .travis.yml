@@ -1,0 +1,10 @@
+language: ruby
+rvm:
+ - 2.7.1
+
+services:
+  - postgresql
+
+before_script:
+  - cp config/database.yml.travis config/database.yml
+  - psql -c 'create database jantar_para_dois_test;' -U postgres
