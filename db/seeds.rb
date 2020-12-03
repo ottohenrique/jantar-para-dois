@@ -2,7 +2,7 @@ require 'yaml'
 
 [User, Recipe, Market].each(&:delete_all)
 
-User.create(username: 'joao.costa', password: '12345')
+User.create(username: 'otto.henrique', password: '12345')
 
 YAML.load(File.read('./db/receitas.yml'))['receipes'].each do |recipe|
   Recipe.create(

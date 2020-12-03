@@ -1,11 +1,23 @@
 <p><%= flash[:error] %></p>
 
-<h1>Login</h1>
-<%= form_with(url: "/sessions/login") do %>
-<%= label_tag :username%>
-<%= text_field_tag :username, value: "joao.costa" %>
-<%= label_tag :password%>
-<%= password_field_tag :password, value: "12345" %>
+<div class='row'>
+  <div class="card">
+    <div class="card-image">
+      <%= image_tag 'couple.jpg', style: 'max-width: 100%; max-height: 100%' %>
+    </div>
+    <div class="card-action">
+      <%= form_with(url: "/sessions/login" ) do %>
 
-<%= submit_tag "Login", class: 'waves-effect waves-light btn-large' %>
-<%end%>
+      <div>
+        <%= label_tag :username, 'Seu nome' %>
+        <%= text_field_tag :username, 'otto.henrique' %>
+      </div>
+      <div>
+        <%= label_tag :password  %>
+        <%= password_field_tag :password, '12345' %>
+      </div>
+      <%= submit_tag "Login", class: 'waves-effect waves-light btn-large' %>
+      <%end%>
+    </div>
+  </div>
+</div>
