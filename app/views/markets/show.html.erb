@@ -1,13 +1,19 @@
 <h2><%= @market.name %></h2>
 
-<p>loren ispum</p>
+<p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Cras molestie odio vel mauris suscipit volutpat et ut est. Nunc dapibus elit in velit pulvinar, in ultrices magna commodo. Fusce eu sollicitudin nisl.</p>
 
 <h3>Confirme sua receita</h3>
-<p><%= @recipe.title %></p>
+<h4><%= @recipe.title %></h4>
 <ul>
   <% @recipe.ingredients.split("\n").each do |item| %>
     <li><%= item %>
   <% end %>
 </ul>
 
-<%= link_to "Fazer pedido", "https://api.whatsapp.com/send?phone=5511955522425&text=#{@order_text}", target: '_blank', class: 'waves-effect waves-light btn-large' %>
+<%=
+  link_to "https://api.whatsapp.com/send?phone=5511955522425&text=#{@order_text}",
+  target: '_blank',
+  class: 'waves-effect waves-light btn-large green accent-3' do
+%>
+Fazer pedido <%= fa_icon "whatsapp" %>
+<% end %>
