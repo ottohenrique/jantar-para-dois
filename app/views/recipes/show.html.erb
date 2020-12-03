@@ -4,9 +4,9 @@
 <%= image_tag  @recipe.image_url %>
 
 <h3>Ingredientes</h3>
-<ul>
+<ul class="collection">
   <% @recipe.ingredients.split("\n").each do |item| %>
-    <li><%= item %>
+    <li class="collection-item"><%= item %>
   <% end %>
 </ul>
 
@@ -17,4 +17,4 @@
 </h3>
 
 <p>Gostou dessa receita? O que acha de arriscar?</p>
-<%= link_to  "Fazer pedido", markets_path(recipe_id: @recipe.id) %>
+<%= link_to  "Fazer pedido", markets_path(recipe_id: @recipe.id), class: 'waves-effect waves-light btn-large' %>
