@@ -1,0 +1,8 @@
+<h3>Mercados próximos a você</h3>
+<div>
+  <ul>
+    <% @markets.each do |market| %>
+      <li><%= link_to market.name, market_path(market) %></li>
+    <% end %>
+  </ul>
+</div>

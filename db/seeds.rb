@@ -1,5 +1,7 @@
 require 'yaml'
 
+[User, Recipe, Market].each(&:delete_all)
+
 User.create(username: 'johndoe@example.com', password: 'projetoconclusao')
 
 YAML.load(File.read('./db/receitas.yml'))['receipes'].each do |recipe|
@@ -9,4 +11,13 @@ YAML.load(File.read('./db/receitas.yml'))['receipes'].each do |recipe|
     directions: recipe['directions'],
     image_url: recipe['image_url']
   )
+end
+
+[
+  ['Mercadinho dona Lúcia'],
+  ['Villa Real'],
+  ['Pão de Açúcar'],
+  ['Feira de bairro']
+].each do |market|
+  Market.create(name: market[0])
 end

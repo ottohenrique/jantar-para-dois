@@ -1,0 +1,13 @@
+<h2><%= @market.name %></h2>
+
+<p>loren ispum</p>
+
+<h3>Confirme sua receita</h3>
+<p><%= @recipe.title %></p>
+<ul>
+  <% @recipe.ingredients.split("\n").each do |item| %>
+    <li><%= item %>
+  <% end %>
+</ul>
+
+<%= link_to "Fazer pedido", "https://api.whatsapp.com/send?phone=5511955522425&text=#{@order_text}", target: '_blank' %>
