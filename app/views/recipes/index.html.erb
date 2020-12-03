@@ -1,2 +1,13 @@
-<h1>Recipes#index</h1>
-<p>Find me in app/views/recipes/index.html.erb</p>
+<div>
+  <h3><%= @recipes.first.title %></h3>
+  <%= image_tag  @recipes.first.image_url %>
+
+  <%= link_to "Ver receita", recipe_path(@recipes.first.id) %>
+</div>
+<div>
+  <ul>
+    <% @recipes.each do |recipe| %>
+      <li><%= link_to  recipe.title, recipe_path(recipe) %></li>
+    <% end %>
+  </ul>
+</div>

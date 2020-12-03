@@ -1,2 +1,20 @@
-<h1>Recipes#show</h1>
-<p>Find me in app/views/recipes/show.html.erb</p>
+<%= link_to  "Voltar", recipes_path %>
+<h2><%= @recipe.title %></h2>
+
+<%= image_tag  @recipe.image_url %>
+
+<h3>Ingredientes</h3>
+<ul>
+  <% @recipe.ingredients.split("\n").each do |item| %>
+    <li><%= item %>
+  <% end %>
+</ul>
+
+<h3>Modo de preparo</h3>
+  <% @recipe.directions.split("\n").each do |item| %>
+    <li><%= item %>
+  <% end %>
+</h3>
+
+<p>Gostou dessa receita? O que acha de arriscar?</p>
+<a href=''>Fazer pedido</a>

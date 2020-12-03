@@ -3,7 +3,8 @@ Rails.application.routes.draw do
   post 'sessions/login', to: 'sessions#create'
   get 'sessions/welcome'
 
-  resource :recipes, only: [:index, :show]
+  get '/receitas', to: 'recipes#index', as: :recipes
+  get '/receita/:id', to: 'recipes#show', as: :recipe
 
   root to: 'recipes#index'
 end
