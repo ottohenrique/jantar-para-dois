@@ -1,19 +1,31 @@
-<h2><%= @market.name %></h2>
+<div class="row">
+  <div class="card">
+    <div class="card-content">
+      <h3 class="card-title"><%= @market.name %></h3>
+      <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Cras molestie odio vel mauris suscipit volutpat et ut est. Nunc dapibus elit in velit pulvinar, in ultrices magna commodo. Fusce eu sollicitudin nisl.</p>
+    </div>
+  </div>
+</div>
 
-<p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Cras molestie odio vel mauris suscipit volutpat et ut est. Nunc dapibus elit in velit pulvinar, in ultrices magna commodo. Fusce eu sollicitudin nisl.</p>
-
-<h3>Confirme sua receita</h3>
-<h4><%= @recipe.title %></h4>
-<ul>
-  <% @recipe.ingredients.split("\n").each do |item| %>
-    <li><%= item %>
-  <% end %>
-</ul>
-
-<%=
-  link_to "https://api.whatsapp.com/send?phone=5511955522425&text=#{@order_text}",
-  target: '_blank',
-  class: 'waves-effect waves-light btn-large green accent-3' do
-%>
-Fazer pedido <%= fa_icon "whatsapp" %>
-<% end %>
+<div class="row">
+  <div class="card">
+    <div class="card-content">
+      <h3 class="card-title">Confirme sua receita</h3>
+      <ul class="collection  with-header">
+        <li class="collection-header"><%= @recipe.title %></li>
+        <% @recipe.ingredients.split("\n").each do |item| %>
+        <li class="collection-item"><%= item %></li>
+        <% end %>
+      </ul>
+    </div>
+    <div class="card-action">
+      <%=
+        link_to "https://api.whatsapp.com/send?phone=5511955522425&text=#{@order_text}",
+        target: '_blank',
+        class: 'waves-effect waves-light btn-large green accent-3' do
+      %>
+        Fazer pedido <%= fa_icon "whatsapp" %>
+      <% end %>
+    </div>
+  </div>
+</div>

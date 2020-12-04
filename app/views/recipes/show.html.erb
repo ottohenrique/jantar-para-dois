@@ -1,20 +1,47 @@
-<%= link_to  "Voltar", recipes_path %>
-<h2><%= @recipe.title %></h2>
+<div class="row">
+  <div class="card">
+    <div class="card-image">
+      <%= image_tag  @recipe.image_url, style: 'max-width: 100%; max-height: 100%' %>
+    </div>
+    <div class="card-action">
+      <h3 class="card-title"><%= @recipe.title %></h3>
+    </div>
+  </div>
+</div>
 
-<%= image_tag  @recipe.image_url %>
+<div class="row">
+  <div class="card">
+    <div class="card-content">
+      <h3 class="card-title">Ingredientes</h3>
+      <ul class="collection">
+        <% @recipe.ingredients.split("\n").each do |item| %>
+        <li class="collection-item"><%= item %>
+          <% end %>
+      </ul>
+    </div>
+  </div>
+</div>
 
-<h3>Ingredientes</h3>
-<ul class="collection">
-  <% @recipe.ingredients.split("\n").each do |item| %>
-    <li class="collection-item"><%= item %>
-  <% end %>
-</ul>
+<div class="row">
+  <div class="card">
+    <div class="card-content">
+      <h3 class="card-title">Modo de preparo</h3>
+      <ul class="collection">
+        <% @recipe.directions.split("\n").each do |item| %>
+        <li class="collection-item"><%= item %>
+          <% end %>
+      </ul>
+    </div>
+  </div>
+</div>
 
-<h3>Modo de preparo</h3>
-  <% @recipe.directions.split("\n").each do |item| %>
-    <li><%= item %>
-  <% end %>
-</h3>
-
-<p>Gostou dessa receita? O que acha de arriscar?</p>
-<%= link_to  "Fazer pedido", markets_path(recipe_id: @recipe.id), class: 'waves-effect waves-light btn-large' %>
+<div class="row">
+  <div class="card">
+    <div class="card-content">
+      <p>Gostou dessa receita? O que acha de arriscar?</p>
+    </div>
+    <div class="card-action">
+      <%= link_to  "Fazer pedido", markets_path(recipe_id: @recipe.id), class: 'waves-effect waves-light btn-large' %>
+    </div>
+  </div>
+</div>
